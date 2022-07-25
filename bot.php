@@ -3,7 +3,7 @@
 
 const TOKEN = '5420937989:AAG7PZ5RjeNZeVP076MYDULhZGU089PjNbw';
 
-//https://api.telegram.org/bot5420937989:AAG7PZ5RjeNZeVP076MYDULhZGU089PjNbw/setWebhook?url=https://b352-217-79-29-247.eu.ngrok.io/bot.php
+//https://api.telegram.org/bot5420937989:AAG7PZ5RjeNZeVP076MYDULhZGU089PjNbw/setWebhook?url=https://1c77-217-79-29-247.eu.ngrok.io/bot.php
 
 $data = json_decode(file_get_contents('php://input'), TRUE);
 file_put_contents('bot_loggs.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
@@ -112,4 +112,9 @@ function getTextToVoice($voice_text){
     $f = file_get_contents("https://tts.voicetech.yandex.net/generate?text=".urlencode($voice_text)."&format=mp3&sampleRateHertz=64000&lang=ru-RU&speed=1&speaker=omazh&emotion=good&key=abfbe0a3-819a-4a81-806a-1d9abfe007f6");
     file_put_contents(__DIR__."/f.mp3",$f);
     exec("D:/app/open server/openserver/domains/test-bot.local/f.mp3");
+}
+
+function getNone(){
+    // функция ничего не делает
+    // нужна для теста
 }
